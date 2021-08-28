@@ -1,0 +1,5 @@
+{
+  "prettier.enableDebugLogs": true,
+  "prettier.endOfLine": "auto",
+  "prettier.insertPragma": true
+}

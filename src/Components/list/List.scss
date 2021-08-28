@@ -1,0 +1,46 @@
+/** @format */
+
+.list {
+  // background-color: white;
+  width: 100%;
+  margin-top: 10px;
+
+  .listTtile {
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 50px;
+  }
+
+  .wrapper {
+    position: relative;
+
+    .slideArrow {
+      width: 50px;
+      height: 100%;
+      color: white;
+
+      color: white;
+      background-color: rgba(22, 22, 22, 0.75);
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      z-index: 999;
+
+      &.left {
+        left: 0;
+      }
+
+      &.right {
+        right: 0;
+      }
+    }
+    .container {
+      display: flex;
+      margin-left: 50px;
+      width: max-content;
+      transform: translateX(0px);
+      transition: all 1s ease;
+    }
+  }
+}

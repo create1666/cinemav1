@@ -4,26 +4,29 @@ import {
   ArrowBackIosOutlined,
   ArrowForwardIosOutlined,
 } from "@material-ui/icons";
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import "./List.scss";
 import { ListItem } from "../lisItem/ListItem";
 
 const List = () => {
   const listRef = useRef();
+  let [sliderNumber, setSliderNumber] = useState(0);
+  let [isTranslate, setTranslate] = useState(false);
 
   const handleClick = (paramet) => {
-    let distance = listRef.current.getBoundingClientRect().x;
+    setTranslate(true);
+    let distance = listRef.current.getBoundingClientRect().x - 50;
 
-    if (paramet === "left") {
+    if (paramet === "left" && sliderNumber > 0) {
+      setSliderNumber(sliderNumber - 1);
       listRef.current.style.transform = `translateX(${230 + distance}px)`;
     }
-    if (paramet === "right") {
+    if (paramet === "right" && sliderNumber < 5) {
+      setSliderNumber(sliderNumber + 1);
       listRef.current.style.transform = `translateX(${-230 + distance}px)`;
     }
     console.log("ex=", distance);
   };
-
-  console.log("hzndleclic", handleClick);
 
   return (
     <div className="list">
@@ -34,6 +37,7 @@ const List = () => {
           <ArrowBackIosOutlined
             className="slideArrow left"
             onClick={() => handleClick("left")}
+            style={{ display: !isTranslate && `none` }}
           />
         </div>
         <div className="container" ref={listRef}>

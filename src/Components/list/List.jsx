@@ -7,6 +7,7 @@ import {
 import React, { useRef, useState } from "react";
 import "./List.scss";
 import { ListItem } from "../lisItem/ListItem";
+import { imgBg } from "../lisItem/Assets/img";
 
 const List = () => {
   const listRef = useRef();
@@ -41,16 +42,16 @@ const List = () => {
           />
         </div>
         <div className="container" ref={listRef}>
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
-          <ListItem />
+          <ListItem {...imgBg} />
+          <ListItem {...imgBg} />
+          <ListItem {...imgBg} />
+          <ListItem {...imgBg} />
+          <ListItem {...imgBg} />
+          <ListItem {...imgBg} />
+          <ListItem {...imgBg} />
+          <ListItem {...imgBg} />
+          <ListItem {...imgBg} />
+          <ListItem {...imgBg} />
         </div>
         <div>
           {" "}
